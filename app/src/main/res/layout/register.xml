@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="0.65in"
+        android:ems="10"
+        android:hint="Имя"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/password1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/email"
+        android:layout_alignStart="@+id/email"
+        android:layout_below="@+id/email"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="Пароль"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/password2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/password1"
+        android:layout_alignStart="@+id/password1"
+        android:layout_below="@+id/password1"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:hint="Подтвердите пароль"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Name"
+        android:layout_alignStart="@+id/Name"
+        android:layout_below="@+id/Name"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <Button
+        android:id="@+id/registerbtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password2"
+        android:layout_centerHorizontal="true"
+        android:text="Регистрация" />
+
+    <TextView
+        android:id="@+id/loginurl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/registerbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:text="Вход в систему"
+        android:textAllCaps="true"
+        android:textColor="#88b04b" />
+</RelativeLayout>

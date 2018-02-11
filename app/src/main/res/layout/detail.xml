@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/detailLayout">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Тестовый курс"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:layout_marginLeft="10dp"
+        android:gravity="start" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:text="Равным образом реализация намеченных плановых заданий способствует подготовки и реализации систем массового участия. Таким образом реализация намеченных плановых заданий требуют от нас анализа форм развития.
+
+Повседневная практика показывает, что начало повседневной работы по формированию позиции позволяет оценить значение существенных финансовых и административных условий. Товарищи! рамки и место обучения кадров позволяет выполнять важные задания по разработке форм развития."
+        android:textColor="?attr/textColorAlertDialogListItem"
+        android:textSize="18sp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Тестовые вопросы"
+        android:textColor="?attr/textColorAlertDialogListItem"
+        android:textSize="24sp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/questions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/textColorAlertDialogListItem"
+        android:textSize="18sp"
+        android:layout_marginLeft="10dp"/>
+
+
+</LinearLayout>

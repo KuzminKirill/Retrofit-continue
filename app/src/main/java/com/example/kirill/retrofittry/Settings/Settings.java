@@ -1,8 +1,6 @@
 package com.example.kirill.retrofittry.Settings;
 
-/**
- * Created by Sergey on 11.02.2018.
- */
 
-public class Settings {
+public final class Settings {
+    public static final String POINT_URL = "http://192.168.0.105:8000";
 }

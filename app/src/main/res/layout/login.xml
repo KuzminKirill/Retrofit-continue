@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="0.8in"
+        android:ems="10"
+        android:hint="Имя"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Name"
+        android:layout_alignStart="@+id/Name"
+        android:layout_below="@+id/Name"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:hint="Пароль"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/loginbtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Password"
+        android:layout_centerHorizontal="true"
+        android:text="Вход" />
+
+    <TextView
+        android:id="@+id/registerurl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:text="Регистрация"
+        android:textAllCaps="true"
+        android:textColor="#88b04b" />
+</RelativeLayout>
