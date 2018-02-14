@@ -26,12 +26,7 @@ import com.example.kirill.retrofittry.Parsers.Question;
 import com.example.kirill.retrofittry.R;
 import com.example.kirill.retrofittry.Settings.Settings;
 
-/**
- * Created by Kirill on 08.05.2017.
- */
-
 public class CourseDetailActivity extends AppCompatActivity {
-
 
     private GetCourses getCourses;
     private GetQuestions getQuestions;

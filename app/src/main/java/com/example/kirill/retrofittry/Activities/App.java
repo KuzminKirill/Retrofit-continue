@@ -8,7 +8,6 @@ import com.example.kirill.retrofittry.Settings.Settings;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
 public class App extends Application {
     private static API api;
     private Retrofit retrofit;

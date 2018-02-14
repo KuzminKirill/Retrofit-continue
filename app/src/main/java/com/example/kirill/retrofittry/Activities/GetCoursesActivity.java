@@ -4,7 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -14,6 +17,7 @@ import com.example.kirill.retrofittry.Interfaces.GetCourses;
 import com.example.kirill.retrofittry.R;
 import com.example.kirill.retrofittry.Settings.Settings;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -25,10 +29,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
-
 public class GetCoursesActivity extends AppCompatActivity {
 
+    private Adapter adapter;
+    private Courses courses;
     private TextView coursesTV;
     private GetCourses getCourses;
 
@@ -36,59 +40,76 @@ public class GetCoursesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.get_courses);
-
+        Log.e("coursesActivity", "start creating activity");
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(30, TimeUnit.SECONDS)
                 .readTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)
                 .build();
-
-
+        Log.e("coursesActivity", "http client done");
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Settings.POINT_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
-
+        coursesTV = findViewById(R.id.coursesTv);
         getCourses = retrofit.create(GetCourses.class);
-
-
-        Button allbtn = (Button) findViewById(R.id.getallBtn);
-        allbtn.setOnClickListener(new View.OnClickListener() {
+        Log.e("coursesActivity", "retrofit done");
+        //Button allBtn = findViewById(R.id.getallBtn);
+        /*allBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadCourses();
             }
-        });
+        });*/
 
-        Button onebtn = (Button) findViewById(R.id.oneBtn);
-        onebtn.setOnClickListener(new View.OnClickListener() {
+        //Button oneBtn = findViewById(R.id.oneBtn);
+        /*oneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadCourse(2);
             }
-        });
+        });*/
 
-        coursesTV = (TextView) findViewById(R.id.coursesTv);
+       // loadCourses();
 
+
+
+        ///example data
+        ArrayList<Course> ex = new ArrayList<>();
+        for (int i =0;i<10;i++){
+            Course q = new Course();
+            q.setId(i);
+            q.setDescription("description " + i);
+            ex.add(q);
+        }
+        courses = new Courses();
+        courses.setCourses(ex);
+        ///end example data
+
+
+        adapter = new com.example.kirill.retrofittry.Activities.Adapter(this,courses);
+        ListView lv = findViewById(R.id.lv);
+        lv.setAdapter((ListAdapter) adapter);
     }
 
-    private void loadCourses() {
+    /*private Courses loadCourses() {
         Call<Courses> call = getCourses.all();
         call.enqueue(new Callback<Courses>() {
             @Override
             public void onResponse(Call<Courses> call, Response<Courses> response) {
-                Courses courses = response.body();
-                displayCourses(courses);
+                courses = response.body();
+               // displayCourses(courses);
+                Log.e("all courses", "courses displayed");
             }
-
             @Override
             public void onFailure(Call<Courses> call, Throwable t) {
                 Log.e("one course", "I got an error with all courses", t);
             }
         });
-    }
-
+        return courses;
+    }*/
+/*
     private void displayCourses(Courses c) {
         if (c != null) {
             List<Course> courses = c.getCourses();
@@ -101,8 +122,8 @@ public class GetCoursesActivity extends AppCompatActivity {
         } else {
             coursesTV.setText("Error to get Courses");
         }
-    }
-
+    }*/
+/*
     private void loadCourse(int id) {
         Call<Course> call = getCourses.select(id);
         call.enqueue(new Callback<Course>() {
@@ -116,14 +137,14 @@ public class GetCoursesActivity extends AppCompatActivity {
                 Log.e("one course", "I got an error with one course", t);
             }
         });
-    }
+    }*/
 
-    private void displayCourse(Course course) {
+   /* private void displayCourse(Course course) {
         if (course != null) {
-            String tmp = course.getId() + " | " + course.getDescription() + " | ";
+            String tmp = course.getId() + " | " + course.getDescription() + " |\n";
             coursesTV.setText(tmp);
         } else {
             coursesTV.setText("Error to get Course");
         }
-    }
+    }*/
 }
