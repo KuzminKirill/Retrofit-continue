@@ -13,8 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.kirill.retrofittry.BuildConfig;
 import com.example.kirill.retrofittry.Interfaces.API;
 import com.example.kirill.retrofittry.R;
 import com.example.kirill.retrofittry.Settings.Settings;
@@ -42,17 +42,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<RegistrationResponse> call, Response<RegistrationResponse> response) {
                 if (response.isSuccessful()) {
+                    Toast.makeText(MainActivity.this,"Success",Toast.LENGTH_SHORT);
                     Log.e("sucsess", "it's worked");
                     authtoken = authtoken + response.toString();
                     Intent i = new Intent(MainActivity.this, TableCourseActivity.class);
                     startActivity(i);
                 } else {
+                    Toast.makeText(MainActivity.this,"Invalid token",Toast.LENGTH_SHORT);
                     Log.e("error response", "error with token");
                 }
             }
 
             @Override
             public void onFailure(Call<RegistrationResponse> call, Throwable t) {
+                Toast.makeText(MainActivity.this,"Server is not responding",Toast.LENGTH_SHORT);
                 Log.e("falue", "falue!!!", t);
             }
         });
@@ -76,13 +79,13 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         api = retrofit.create(API.class);
-        name = (TextView) findViewById(R.id.Name);
-        email = (TextView) findViewById(R.id.email);
-        password1 = (TextView) findViewById(R.id.password1);
-        password2 = (TextView) findViewById(R.id.password2);
+        name = findViewById(R.id.Name);
+        email = findViewById(R.id.email);
+        password1 = findViewById(R.id.password1);
+        password2 = findViewById(R.id.password2);
 
-        Button registerbtn = (Button) findViewById(R.id.registerbtn);
-        registerbtn.setOnClickListener(new View.OnClickListener() {
+        Button registerBtn = findViewById(R.id.register_button);
+        registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 RegistrationBody body = new RegistrationBody();
@@ -94,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TextView logintext = (TextView) findViewById(R.id.loginurl);
-        logintext.setOnClickListener(new View.OnClickListener() {
+        TextView loginText = findViewById(R.id.login_redirect);
+        loginText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, LoginActivity.class);

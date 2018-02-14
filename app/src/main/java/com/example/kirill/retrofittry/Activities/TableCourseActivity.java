@@ -28,7 +28,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
 public class TableCourseActivity extends AppCompatActivity {
 
     private TextView coursename;
@@ -57,13 +56,13 @@ public class TableCourseActivity extends AppCompatActivity {
                 .build();
 
         getCourses = retrofit.create(GetCourses.class);
-        coursename = (TextView) findViewById(R.id.coursename);
-        coursedescription = (TextView) findViewById(R.id.coursedescription);
-        coursetime = (TextView) findViewById(R.id.coursetime);
-        hyperlink = (TextView) findViewById(R.id.hyperlink);
+        coursename = findViewById(R.id.course_name);
+        coursedescription = findViewById(R.id.course_description);
+        coursetime = findViewById(R.id.course_time);
+        hyperlink = findViewById(R.id.hyperlink);
         loadCourse(2);
 
-        TextView hyperlink = (TextView) findViewById(R.id.hyperlink);
+      //  TextView hyperlink = findViewById(R.id.hyperlink);
         hyperlink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

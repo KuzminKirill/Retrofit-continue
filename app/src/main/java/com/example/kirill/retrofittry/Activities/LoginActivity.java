@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kirill.retrofittry.Interfaces.API;
 import com.example.kirill.retrofittry.Settings.Settings;
@@ -22,12 +23,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
-import static android.app.PendingIntent.getActivity;
-
-/**
- * Created by Kirill on 20.04.2017.
- */
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -55,11 +50,11 @@ public class LoginActivity extends AppCompatActivity {
 
         api = retrofit.create(API.class);
 
-        name = (TextView) findViewById(R.id.Name);
-        password = (TextView) findViewById(R.id.Password);
+        name = findViewById(R.id.Name);
+        password = findViewById(R.id.Password);
 
-        TextView registertext = (TextView) findViewById(R.id.registerurl);
-        registertext.setOnClickListener(new View.OnClickListener() {
+        TextView registerText = findViewById(R.id.registerurl);
+        registerText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(LoginActivity.this, MainActivity.class);
@@ -67,8 +62,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button loginbtn = (Button) findViewById(R.id.loginbtn);
-        loginbtn.setOnClickListener(new View.OnClickListener() {
+        Button loginBtn = findViewById(R.id.loginbtn);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 LoginBody body = new LoginBody();
@@ -86,17 +81,20 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this,"Success",Toast.LENGTH_SHORT).show();
                     Log.e("sucsess", "it's worked");
                     //authtoken = authtoken + response.toString();
-                    Intent i = new Intent(LoginActivity.this, TableCourseActivity.class);
+                    Intent i = new Intent(LoginActivity.this, GetCoursesActivity.class);
                     startActivity(i);
                 } else {
+                    Toast.makeText(LoginActivity.this,"Invalid token",Toast.LENGTH_SHORT).show();
                     Log.e("error response", "error with token");
                 }
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
+                Toast.makeText(LoginActivity.this,"Server is not responding",Toast.LENGTH_SHORT).show();
                 Log.e("falue", "falue!!!", t);
             }
         });

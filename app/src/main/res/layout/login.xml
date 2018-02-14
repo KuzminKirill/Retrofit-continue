@@ -44,7 +44,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"
         android:clickable="true"
-        android:onClick="onClick"
         android:text="Регистрация"
         android:textAllCaps="true"
         android:textColor="#88b04b" />

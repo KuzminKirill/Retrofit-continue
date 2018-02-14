@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">RetrofitTry</string>
+    <string name="description">description</string>
+    <string name="all_courses">All Courses</string>
+    <string name="one_course">One course</string>
+    <string name="register_hint_name">Имя</string>
+    <string name="register_hint_password">Пароль</string>
+    <string name="register_hint_confirm_password">Подтвердите пароль</string>
+    <string name="register_hint_email">Email</string>
+    <string name="register_submit_button">Регистрация</string>
+    <string name="register_redirect_login">Вход в систему</string>
 </resources>
