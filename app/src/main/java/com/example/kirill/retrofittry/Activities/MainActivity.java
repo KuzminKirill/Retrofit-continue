@@ -97,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Intent i = new Intent(MainActivity.this, GetCoursesActivity.class);
+        startActivity(i);
+
         TextView loginText = findViewById(R.id.login_redirect);
         loginText.setOnClickListener(new View.OnClickListener() {
             @Override

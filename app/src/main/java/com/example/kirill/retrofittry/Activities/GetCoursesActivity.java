@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.example.kirill.retrofittry.Parsers.Course;
@@ -35,6 +36,7 @@ public class GetCoursesActivity extends AppCompatActivity {
     private Courses courses;
     private TextView coursesTV;
     private GetCourses getCourses;
+    private List<Course> courslist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,24 +75,45 @@ public class GetCoursesActivity extends AppCompatActivity {
 
        // loadCourses();
 
+        App.getCourses().all().enqueue(new Callback<List<Course>>(){
+            @Override
+            public void onResponse(Call<List<Course>> call, Response<List<Course>> response) {
+                ArrayList<Course> courslist = new ArrayList<>();
+                courslist.addAll(response.body());
+                courses = new Courses();
+                courses.setCourses(courslist);
+
+
+                adapter = new com.example.kirill.retrofittry.Activities.Adapter(GetCoursesActivity.this, courses);
+                ListView lv = findViewById(R.id.lv);
+                lv.setAdapter((ListAdapter) adapter);
+            }
+            @Override
+            public void onFailure(Call<List<Course>> call, Throwable t) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Пора покормить кота!", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
 
 
         ///example data
-        ArrayList<Course> ex = new ArrayList<>();
-        for (int i =0;i<10;i++){
-            Course q = new Course();
-            q.setId(i);
-            q.setDescription("description " + i);
-            ex.add(q);
-        }
-        courses = new Courses();
-        courses.setCourses(ex);
-        ///end example data
+       //ArrayList<Course> ex = new ArrayList<>();
+       //for (int i =0;i<10;i++){
+       //    Course q = new Course();
+       //    q.setId(i);
+       //    q.setDescription("description " + i);
+       //    ex.add(q);
+       //}
+       //courses = new Courses();
+       //courses.setCourses(ex);
+       /////end example data
 
 
-        adapter = new com.example.kirill.retrofittry.Activities.Adapter(this,courses);
-        ListView lv = findViewById(R.id.lv);
-        lv.setAdapter((ListAdapter) adapter);
+       //adapter = new com.example.kirill.retrofittry.Activities.Adapter(this,courses);
+       //ListView lv = findViewById(R.id.lv);
+       //lv.setAdapter((ListAdapter) adapter);
     }
 
     /*private Courses loadCourses() {
