@@ -54,7 +54,7 @@ public class GetCoursesActivity extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();
-        coursesTV = findViewById(R.id.coursesTv);
+        //coursesTV = findViewById(R.id.coursesTv);
         getCourses = retrofit.create(GetCourses.class);
         Log.e("coursesActivity", "retrofit done");
         //Button allBtn = findViewById(R.id.getallBtn);
