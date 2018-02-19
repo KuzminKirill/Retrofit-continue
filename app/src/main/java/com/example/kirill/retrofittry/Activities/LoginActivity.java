@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         registerText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                Intent i = new Intent(LoginActivity.this, RegisterActivityKotlin.class);
                 startActivity(i);
             }
         });
@@ -72,7 +72,6 @@ public class LoginActivity extends AppCompatActivity {
                 LoginUser(body);
             }
         });
-
     }
 
     private void LoginUser(LoginBody loginbody) {
@@ -91,7 +90,6 @@ public class LoginActivity extends AppCompatActivity {
                     Log.e("error response", "error with token");
                 }
             }
-
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 Toast.makeText(LoginActivity.this,"Server is not responding",Toast.LENGTH_SHORT).show();
@@ -99,6 +97,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
-
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+    }
 }

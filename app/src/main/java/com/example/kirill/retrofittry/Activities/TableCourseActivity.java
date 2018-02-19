@@ -98,7 +98,7 @@ public class TableCourseActivity extends AppCompatActivity {
 
             Context context = getApplicationContext();
 
-            Intent notificationIntent = new Intent(context, MainActivity.class);
+            Intent notificationIntent = new Intent(context, RegisterActivityJava.class);
             PendingIntent contentIntent = PendingIntent.getActivity(context,
                     0, notificationIntent,
                     PendingIntent.FLAG_CANCEL_CURRENT);

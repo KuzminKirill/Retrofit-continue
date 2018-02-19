@@ -8,7 +8,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Тестовый курс"
+        android:text="@string/details_test"
         android:textAlignment="textStart"
         android:textColor="@android:color/black"
         android:textSize="24sp"
@@ -20,9 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
-        android:text="Равным образом реализация намеченных плановых заданий способствует подготовки и реализации систем массового участия. Таким образом реализация намеченных плановых заданий требуют от нас анализа форм развития.
-
-Повседневная практика показывает, что начало повседневной работы по формированию позиции позволяет оценить значение существенных финансовых и административных условий. Товарищи! рамки и место обучения кадров позволяет выполнять важные задания по разработке форм развития."
+        android:text="@string/details_description"
         android:textColor="?attr/textColorAlertDialogListItem"
         android:textSize="18sp"
         android:layout_marginLeft="10dp"/>
@@ -32,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Тестовые вопросы"
+        android:text="@string/description_test_questions"
         android:textColor="?attr/textColorAlertDialogListItem"
         android:textSize="24sp"
         android:layout_marginLeft="10dp"/>
@@ -44,6 +42,4 @@
         android:textColor="?attr/textColorAlertDialogListItem"
         android:textSize="18sp"
         android:layout_marginLeft="10dp"/>
-
-
 </LinearLayout>
