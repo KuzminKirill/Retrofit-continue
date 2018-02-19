@@ -52,7 +52,7 @@ class RegisterActivityKotlin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
 
-        val client = OkHttpClient.Builder()
+     /*   val client = OkHttpClient.Builder()
                 .connectTimeout(300, TimeUnit.SECONDS)
                 .readTimeout(300, TimeUnit.SECONDS)
                 .writeTimeout(300, TimeUnit.SECONDS)
@@ -63,7 +63,7 @@ class RegisterActivityKotlin : AppCompatActivity() {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
-
+*/
         register_button.setOnClickListener({
             val body = RegistrationBody()
             body.username = Name.text.toString()
@@ -75,7 +75,7 @@ class RegisterActivityKotlin : AppCompatActivity() {
 
         val loginText = findViewById<TextView>(R.id.login_redirect)
         loginText.setOnClickListener({
-            val i = Intent(this@RegisterActivityKotlin, LoginActivity::class.java)
+            val i = Intent(this@RegisterActivityKotlin, LoginActivityJava::class.java)
             startActivity(i)
         })
     }

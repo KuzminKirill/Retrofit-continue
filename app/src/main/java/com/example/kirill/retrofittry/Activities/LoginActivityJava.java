@@ -24,7 +24,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivityJava extends AppCompatActivity {
 
     private API api;
     private TextView name;
@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         registerText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this, RegisterActivityKotlin.class);
+                Intent i = new Intent(LoginActivityJava.this, RegisterActivityKotlin.class);
                 startActivity(i);
             }
         });
@@ -80,19 +80,19 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(LoginActivity.this,"Success",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivityJava.this,"Success",Toast.LENGTH_SHORT).show();
                     Log.e("sucsess", "it's worked");
                     //authtoken = authtoken + response.toString();
-                    Intent i = new Intent(LoginActivity.this, GetCoursesActivity.class);
+                    Intent i = new Intent(LoginActivityJava.this, GetCoursesActivity.class);
                     startActivity(i);
                 } else {
-                    Toast.makeText(LoginActivity.this,"Invalid token",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivityJava.this,"Invalid token",Toast.LENGTH_SHORT).show();
                     Log.e("error response", "error with token");
                 }
             }
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Toast.makeText(LoginActivity.this,"Server is not responding",Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivityJava.this,"Server is not responding",Toast.LENGTH_SHORT).show();
                 Log.e("falue", "falue!!!", t);
             }
         });
