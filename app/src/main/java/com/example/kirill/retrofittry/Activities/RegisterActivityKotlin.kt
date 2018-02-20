@@ -27,7 +27,7 @@ class RegisterActivityKotlin : AppCompatActivity() {
     var authtoken = "Token "
 
     private fun registerUser(body: RegistrationBody) {
-        App.getApi().registerUser(body).enqueue(object : Callback<RegistrationResponse> {
+        APIKotlin.getApi().registerUser(body).enqueue(object : Callback<RegistrationResponse> {
             override fun onResponse(call: Call<RegistrationResponse>, response: Response<RegistrationResponse>) {
                 if (response.isSuccessful) {
                     Toast.makeText(this@RegisterActivityKotlin, "Success", Toast.LENGTH_SHORT)

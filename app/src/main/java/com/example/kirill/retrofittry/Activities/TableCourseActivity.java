@@ -66,7 +66,7 @@ public class TableCourseActivity extends AppCompatActivity {
         hyperlink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(TableCourseActivity.this, CourseDetailActivity.class);
+                Intent i = new Intent(TableCourseActivity.this, CourseDetailActivityJava.class);
                 startActivity(i);
             }
         });

@@ -43,7 +43,7 @@ class Adapter(context : Context, obj : Courses) : BaseAdapter() {
         view.setOnClickListener {  }
 
         view.setOnClickListener(View.OnClickListener {
-            val i = Intent(ctx, CourseDetailActivity::class.java)
+            val i = Intent(ctx, CourseDetailActivityKotlin::class.java)
             i.putExtra("id",p.id.toString())
             startActivity(ctx,i,null)
         })

@@ -32,6 +32,7 @@ public class App extends Application {
                 .addConverterFactory(GsonConverterFactory.create()) //Конвертер, необходимый для преобразования JSON'а в объекты
                 .client(client)
                 .build();
+
         api = retrofit.create(API.class);//Создаем объект, при помощи которого будем выполнять запросы
         allcourses = retrofit.create(GetCourses.class);
     }

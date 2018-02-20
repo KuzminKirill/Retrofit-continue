@@ -18,7 +18,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class CourseDetailActivity extends AppCompatActivity {
+public class CourseDetailActivityJava extends AppCompatActivity {
 
     private GetCourses getCourses;
     private GetQuestions getQuestions;

@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".Activities.App"
+        android:name=".Activities.APIKotlin"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -20,9 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.RegisterActivityKotlin" />
-        <activity android:name=".Activities.GetCoursesActivity" />
-        <activity android:name=".Activities.TableCourseActivity" />
-        <activity android:name=".Activities.CourseDetailActivity" />
+        <activity android:name=".Activities.GetCoursesActivityKotlin" />
+      <!--  <activity android:name=".Activities.TableCourseActivity" />-->
+        <activity android:name=".Activities.CourseDetailActivityKotlin" />
     </application>
 
 </manifest>

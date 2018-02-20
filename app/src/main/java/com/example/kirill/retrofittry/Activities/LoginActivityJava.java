@@ -83,7 +83,7 @@ public class LoginActivityJava extends AppCompatActivity {
                     Toast.makeText(LoginActivityJava.this,"Success",Toast.LENGTH_SHORT).show();
                     Log.e("sucsess", "it's worked");
                     //authtoken = authtoken + response.toString();
-                    Intent i = new Intent(LoginActivityJava.this, GetCoursesActivity.class);
+                    Intent i = new Intent(LoginActivityJava.this, GetCoursesActivityJava.class);
                     startActivity(i);
                 } else {
                     Toast.makeText(LoginActivityJava.this,"Invalid token",Toast.LENGTH_SHORT).show();

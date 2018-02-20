@@ -60,13 +60,13 @@ class LoginActivityKotlin : AppCompatActivity() {
     }
 
     private fun loginUser(loginbody: LoginBody) {
-        App.getApi().loginUser(loginbody).enqueue(object : Callback<LoginResponse> {
+        APIKotlin.getApi().loginUser(loginbody).enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.isSuccessful) {
                     Toast.makeText(this@LoginActivityKotlin, "Success", Toast.LENGTH_SHORT).show()
                     Log.e("success", "it's worked")
                     //authtoken = authtoken + response.toString();
-                    val i = Intent(this@LoginActivityKotlin, GetCoursesActivity::class.java)
+                    val i = Intent(this@LoginActivityKotlin, GetCoursesActivityKotlin::class.java)
                     startActivity(i)
                 } else {
                     Toast.makeText(this@LoginActivityKotlin, "Invalid token", Toast.LENGTH_SHORT).show()
