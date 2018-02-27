@@ -1,11 +1,11 @@
-package com.example.kirill.retrofittry.Activities
+package com.example.kirill.retrofittry.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import com.example.kirill.retrofittry.R
 
-class CourseDetailActivityKotlin : AppCompatActivity() {
+class CourseDetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
