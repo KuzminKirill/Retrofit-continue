@@ -1,4 +1,4 @@
-package com.example.kirill.retrofittry.Activities
+package com.example.kirill.retrofittry.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -14,24 +14,23 @@ import kotlinx.android.synthetic.main.course.view.*
 
 import com.example.kirill.retrofittry.Parsers.Courses
 import com.example.kirill.retrofittry.R
+import com.example.kirill.retrofittry.activities.CourseDetailActivity
+import com.example.kirill.retrofittry.activities.ThemesActivity
 
-class Adapter(context : Context, obj : Courses) : BaseAdapter() {
-
-    private fun ViewGroup.inflate(@LayoutRes layoutRes : Int, attachToRoot: Boolean = false) : View {
-        return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
-    }
+class CoursesAdapter(context : Context, obj : Courses) : BaseAdapter() {
 
     private var ctx = context
     private var obj = obj.courses
 
-
-    /// Fill the layout with data
+    /*
+     *Fill the layout with data
+     */
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var view = convertView
         if (view==null) {
             view = parent?.inflate(R.layout.course)
         }
-        var p = obj[position]
+        val p = obj[position]
 
         view!!.course_name.text = p.id.toString()
         view.course_description.text = p.description.toString()
@@ -43,7 +42,7 @@ class Adapter(context : Context, obj : Courses) : BaseAdapter() {
         view.setOnClickListener {  }
 
         view.setOnClickListener(View.OnClickListener {
-            val i = Intent(ctx, CourseDetailActivity::class.java)
+            val i = Intent(ctx, ThemesActivity::class.java)
             i.putExtra("id",p.id.toString())
             startActivity(ctx,i,null)
         })
@@ -63,4 +62,7 @@ class Adapter(context : Context, obj : Courses) : BaseAdapter() {
         return obj.size
     }
 
+    private fun ViewGroup.inflate(@LayoutRes layoutRes : Int, attachToRoot: Boolean = false) : View {
+        return LayoutInflater.from(context).inflate(layoutRes, this, attachToRoot)
+    }
 }
