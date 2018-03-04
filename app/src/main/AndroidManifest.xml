@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kirill.retrofittry">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.kirill.retrofitTry">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".activities.App"
-        android:allowBackup="true"
+        android:name="com.example.kirill.retrofitTry.activities.App"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:label="login" android:name=".activities.LoginActivity">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:label="login" android:name="com.example.kirill.retrofitTry.activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:label="register" android:name=".activities.RegisterActivity" />
-        <activity android:label="courses" android:name=".activities.GetCoursesActivity" />
-        <activity android:label="course_details" android:name=".activities.CourseDetailActivity" />
-        <activity android:label="themes" android:name=".activities.ThemesActivity"></activity>
+        <activity android:label="register" android:name="com.example.kirill.retrofitTry.activities.RegisterActivity" />
+        <activity android:label="courses" android:name="com.example.kirill.retrofitTry.activities.GetCoursesActivity" />
+        <activity android:label="course_details" android:name="com.example.kirill.retrofitTry.activities.CourseDetailActivity"/>
+        <activity android:label="themes" android:name="com.example.kirill.retrofitTry.activities.ThemesActivity"/>
     </application>
-
 </manifest>

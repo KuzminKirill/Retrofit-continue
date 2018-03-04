@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/Name"
+        android:id="@+id/register_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -12,39 +12,40 @@
         android:layout_marginBottom="12dp"
         android:layout_marginTop="0.8in"
         android:ems="10"
-        android:hint="Имя"
+        android:hint="@string/login_username_hint"
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/Password"
+        android:id="@+id/login_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Name"
-        android:layout_alignStart="@+id/Name"
-        android:layout_below="@+id/Name"
+        android:layout_alignLeft="@+id/register_username"
+        android:layout_alignStart="@+id/register_username"
+        android:layout_below="@+id/register_username"
         android:layout_marginBottom="14dp"
         android:ems="10"
-        android:hint="Пароль"
+        android:hint="@string/login_password_hint"
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/loginbtn"
+        android:id="@+id/login_submit"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Password"
+        android:layout_below="@+id/login_password"
         android:layout_centerHorizontal="true"
-        android:text="Вход" />
+        android:text="@string/login_submit" />
 
     <TextView
-        android:id="@+id/registerurl"
+        android:id="@+id/login_linkToRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loginbtn"
+        android:layout_below="@+id/login_submit"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"
         android:clickable="true"
-        android:text="Регистрация"
+        android:text="@string/login_linkToRegister"
         android:textAllCaps="true"
-        android:textColor="#88b04b" />
+        android:textColor="#88b04b"
+        android:focusable="true" />
 </RelativeLayout>

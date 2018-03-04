@@ -1,40 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/detailLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:ignore="UnusedResources">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/courseDetail_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Тестовый курс"
+        android:text="@string/courseDetail_name"
         android:textAlignment="textStart"
         android:layout_marginLeft="10dp"
-        android:gravity="start" />
+        android:gravity="start"
+        android:layout_marginStart="10dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/courseDetail_theory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="Равным образом реализация намеченных плановых заданий способствует подготовки и реализации систем массового участия. Таким образом реализация намеченных плановых заданий требуют от нас анализа форм развития.
-
-Повседневная практика показывает, что начало повседневной работы по формированию позиции позволяет оценить значение существенных финансовых и административных условий. Товарищи! рамки и место обучения кадров позволяет выполнять важные задания по разработке форм развития." />
+        android:text="@string/courseDetail_theory"
+        android:layout_marginStart="10dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="Тестовые вопросы" />
+        android:text="@string/courseDetails_questionsHeader"
+        android:layout_marginStart="10dp" />
 
     <TextView
-        android:id="@+id/questions"
+        android:id="@+id/courseDetail_questions"
         android:layout_width="match_parent"
         android:layout_marginLeft="10dp"
-        android:layout_height="wrap_content" />
-
-
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp" />
 </LinearLayout>

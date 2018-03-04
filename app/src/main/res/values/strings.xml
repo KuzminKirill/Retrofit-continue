@@ -1,15 +1,29 @@
-<resources>
-    <string name="app_name">RetrofitTry</string>
-    <string name="description">description</string>
-    <string name="all_courses">All Courses</string>
-    <string name="one_course">One course</string>
-    <string name="register_hint_name">Имя</string>
-    <string name="register_hint_password">Пароль</string>
-    <string name="register_hint_confirm_password">Подтвердите пароль</string>
-    <string name="register_hint_email">Email</string>
-    <string name="register_submit_button">Регистрация</string>
-    <string name="register_redirect_login">Вход в систему</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="UnusedResources">RetrofitTry</string>
+    <string name="theme_description">description</string>
+    <string name="all_courses" tools:ignore="UnusedResources">All Courses</string>
+    <string name="one_course" tools:ignore="UnusedResources">One course</string>
+    <string name="register_username_hint">Имя</string>
+    <string name="register_password_hint">Пароль</string>
+    <string name="register_confirm_hint">Подтвердите пароль</string>
+    <string name="register_email_hint">Email</string>
+    <string name="register_submit">Регистрация</string>
+    <string name="register_linkToLogin">Вход в систему</string>
     <string name="details_description">Равным образом реализация намеченных плановых заданий способствует подготовки и реализации систем массового участия. Таким образом реализация намеченных плановых заданий требуют от нас анализа форм развития. Повседневная практика показывает, что начало повседневной работы по формированию позиции позволяет оценить значение существенных финансовых и административных условий. Товарищи! рамки и место обучения кадров позволяет выполнять важные задания по разработке форм развития.</string>
     <string name="details_test">Тестовый курс</string>
     <string name="description_test_questions">Тестовые вопросы</string>
+    <string name="course_name">TextView</string>
+    <string name="course_time">time</string>
+    <string name="course_moreInfo">подробнее</string>
+    <string name="course_id">name</string>
+    <string name="login_linkToRegister">Регистрация</string>
+    <string name="login_submit">Вход</string>
+    <string name="login_password_hint">Пароль</string>
+    <string name="login_username_hint">Имя</string>
+    <string name="courseDetail_name" tools:ignore="UnusedResources">Тестовый курс</string>
+    <string name="courseDetail_theory" tools:ignore="UnusedResources">Равным образом реализация намеченных плановых заданий способствует подготовки и реализации систем массового участия. Таким образом реализация намеченных плановых заданий требуют от нас анализа форм развития. Повседневная практика показывает, что начало повседневной работы по формированию позиции позволяет оценить значение существенных финансовых и административных условий. Товарищи! рамки и место обучения кадров позволяет выполнять важные задания по разработке форм развития.</string>
+    <string name="courseDetails_questionsHeader" tools:ignore="UnusedResources">Тестовые вопросы</string>
+    <string name="theme_name">name</string>
+    <string name="theme_theory">theory</string>
+    <string name="theme_moreInfo">подробнее</string>
 </resources>

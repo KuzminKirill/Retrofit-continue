@@ -13,11 +13,11 @@
     >
 
     <TextView
-        android:id="@+id/course_name"
+        android:id="@+id/course_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="name"
+        android:text="@string/course_id"
         android:textColor="@android:color/black"
         android:textSize="24sp" />
 
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/description"
+        android:text="@string/theme_description"
         android:paddingTop="10dp"
         android:textAlignment="textStart"
         android:textColor="?attr/textColorAlertDialogListItem"
@@ -34,25 +34,29 @@
         tools:ignore="RtlCompat" />
 
     <TextView
+        android:id="@+id/course_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/course_name" />
+
+    <TextView
         android:id="@+id/course_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
+        android:layout_gravity="end"
         android:layout_margin="10dp"
-        android:text="time"
+        android:text="@string/course_time"
         android:textAlignment="center"
         android:textColor="?android:attr/textColorHint"
         android:textSize="18sp" />
-
     <TextView
-        android:id="@+id/hyperlink"
+        android:id="@+id/course_moreInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="-7dp"
-        android:allowUndo="false"
         android:gravity="center"
-        android:text="подробнее"
+        android:text="@string/course_moreInfo"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="18sp" />
