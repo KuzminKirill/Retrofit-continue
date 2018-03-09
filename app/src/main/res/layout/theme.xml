@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="name"
+        android:text="@string/theme_name"
         android:textColor="@android:color/black"
         android:textSize="24sp" />
 
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/description"
+        android:text="@string/theme_description"
         android:paddingTop="10dp"
         android:textColor="?attr/textColorAlertDialogListItem"
         android:textSize="18sp"/>
@@ -37,21 +37,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="-7dp"
-        android:gravity="center"
-        android:text="theory"
+        android:text="@string/theme_theory"
         android:textAlignment="center"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/hyperlink"
+        android:id="@+id/course_moreInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="-7dp"
         android:gravity="center"
-        android:text="подробнее"
+        android:text="@string/theme_moreInfo"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="18sp" />
-
 </LinearLayout>

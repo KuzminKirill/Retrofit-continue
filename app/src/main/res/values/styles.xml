@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="Hyperlink">
+    <style name="Hyperlink" tools:ignore="UnusedResources">
         <item name="android:textColor">#88b04b</item>
         <item name="android:background">@drawable/hyperlink_underline</item>
     </style>
