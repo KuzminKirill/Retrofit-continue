@@ -44,8 +44,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"
         android:clickable="true"
+        android:focusable="true"
         android:text="@string/login_linkToRegister"
         android:textAllCaps="true"
-        android:textColor="#88b04b"
-        android:focusable="true" />
+        android:textColor="@color/colorPrimary" />
 </RelativeLayout>

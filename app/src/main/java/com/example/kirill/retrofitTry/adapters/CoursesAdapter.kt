@@ -31,12 +31,12 @@ class CoursesAdapter(context : Context, obj : Courses) : BaseAdapter() {
         }
         val p = obj[position]
 
-        view!!.course_id.text = p.id.toString()
+        view!!.course_name.text = p.id.toString()
         view.course_name.text = p.name.toString()
         view.course_description.text = p.description.toString()
         view.course_time.text = (256).toString()
         view.course_moreInfo.setOnClickListener { Toast.makeText(this.ctx,"course name = "
-                + view.course_id.text
+                + view.course_name.text
                 + "\ndescription = "
                 + view.course_description.text, Toast.LENGTH_SHORT).show() }
         view.setOnClickListener {  }
